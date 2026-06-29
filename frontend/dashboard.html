@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Grocery Waste Prediction Dashboard</title>
+  
+  <!-- CDNs for icons, charts, maps, and PDF exports -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+  <link rel="stylesheet" href="css/style.css"/>
+  
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <!-- html2pdf dependency -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+</head>
+<body data-theme="light">
+  <div class="container" id="dashboardReportContainer">
+    <header class="header">
+      <div class="top-container">
+        <div class="title-section">
+          <i class="fas fa-leaf logo-icon"></i>
+          <h1 class="app-title">Grocery Waste Predictor</h1>
+        </div>
+
+        <div class="user-controls">
+          <button class="theme-toggle-btn" id="themeToggleBtn" title="Toggle Dark/Light Mode">
+            <i class="fas fa-moon"></i>
+          </button>
+          <div class="welcome-card" id="welcomeUser">Welcome 👋</div>
+        </div>
+
+        <nav class="navbar">
+          <a href="#current-items-section"><i class="fas fa-list-alt"></i> Inventory</a>
+          <a href="#donated-section"><i class="fas fa-hand-holding-heart"></i> Donations</a>
+          <a href="#ngo-section"><i class="fas fa-map-marked-alt"></i> NGOs</a>
+          <button class="logout-btn" id="logoutBtn"><i class="fas fa-sign-out-alt"></i> Logout</button>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Stats Section -->
+    <div class="stats-container">
+      <div class="stat-card">
+        <div class="stat-icon"><i class="fas fa-box"></i></div>
+        <div class="stat-details">
+          <h3>Total Items</h3>
+          <p id="totalItems">0</p>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon"><i class="fas fa-exclamation-triangle"></i></div>
+        <div class="stat-details">
+          <h3>Expiring Soon</h3>
+          <p id="expiringItems">0</p>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon"><i class="fas fa-hand-holding-heart"></i></div>
+        <div class="stat-details">
+          <h3>Donated Items</h3>
+          <p id="donatedItems">0</p>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon"><i class="fas fa-leaf"></i></div>
+        <div class="stat-details">
+          <h3>Waste Saved</h3>
+          <p id="wastedCount">0 kg</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Content Grid -->
+    <div class="dashboard-grid">
+      <!-- Left side: forms and tables -->
+      <div class="left-column">
+        <!-- Add Item Form -->
+        <section class="card" id="add-item-section">
+          <h2><i class="fas fa-plus-circle"></i> Add Grocery Item</h2>
+          <form class="add-item-form" id="addItemForm">
+            <div class="form-group">
+              <label for="itemName">Item Name</label>
+              <div class="form-control-row">
+                <input type="text" id="itemName" class="form-control" placeholder="e.g. Milk, Apple, Tomato" required />
+                <button type="button" id="micBtn" class="mic-btn" title="Voice Input"><i class="fas fa-microphone"></i></button>
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <label for="itemCategory">Category (For ML Model)</label>
+              <select id="itemCategory" class="form-control" required>
+                <option value="" disabled selected>Select Category</option>
+                <option value="Dairy">Dairy (Milk, Cheese, Paneer)</option>
+                <option value="Fruits">Fruits (Apples, Bananas)</option>
+                <option value="Vegetables">Vegetables (Spinach, Tomato)</option>
+                <option value="Meat/Fish">Meat & Fish (Chicken, Salmon)</option>
+                <option value="Bakery">Bakery (Bread, Buns)</option>
+                <option value="Pantry/Grains">Pantry & Grains (Rice, Flour)</option>
+                <option value="Frozen Foods">Frozen Foods (Pizza, Frozen Veggies)</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="quantity">Quantity (Units / kg)</label>
+              <input type="number" id="quantity" class="form-control" min="0.1" step="0.1" placeholder="e.g. 2.5" required />
+            </div>
+
+            <div class="form-group">
+              <label for="purchaseDate">Purchase Date</label>
+              <input type="date" id="purchaseDate" class="form-control" required />
+            </div>
+
+            <div class="form-group">
+              <label for="expirationDate">Expiration Date</label>
+              <input type="date" id="expirationDate" class="form-control" required />
+            </div>
+
+            <div class="form-actions">
+              <button type="submit" class="btn-primary"><i class="fas fa-plus"></i> Add Item</button>
+            </div>
+          </form>
+        </section>
+
+        <!-- Grocery Table Section -->
+        <section class="card" id="current-items-section">
+          <div class="search-container">
+            <h2><i class="fas fa-list-alt"></i> Current Inventory</h2>
+            <div class="export-buttons">
+              <button class="btn-secondary" id="exportPdfBtn"><i class="fas fa-file-pdf"></i> Export PDF</button>
+              <button class="btn-secondary" id="exportCsvBtn"><i class="fas fa-file-csv"></i> Download CSV</button>
+            </div>
+          </div>
+
+          <div class="search-container" style="justify-content: flex-start;">
+            <div class="search-box-wrapper">
+              <i class="fas fa-search"></i>
+              <input type="text" id="searchInput" placeholder="Search inventory..." class="search-box" />
+            </div>
+          </div>
+
+          <div class="table-responsive">
+            <table id="inventoryTable">
+              <thead>
+                <tr>
+                  <th>Item</th>
+                  <th>Category</th>
+                  <th>Qty</th>
+                  <th>Expiry Date</th>
+                  <th>ML Waste Prediction</th>
+                  <th>Waste Risk</th>
+                  <th>Donation Limit</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- Populated dynamically by script.js -->
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- Donated Items Section -->
+        <section class="card" id="donated-section">
+          <h2><i class="fas fa-hand-holding-heart"></i> Donated Items</h2>
+          <div class="table-responsive">
+            <table id="donatedTable">
+              <thead>
+                <tr>
+                  <th>Item Name</th>
+                  <th>Category</th>
+                  <th>Quantity</th>
+                  <th>Expiry Date</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="donatedItemsList">
+                <!-- Populated dynamically -->
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </div>
+
+      <!-- Right side: analytics, maps, and recommendations -->
+      <div class="right-column">
+        <!-- Circular Eco Impact Score -->
+        <section class="card">
+          <h2><i class="fas fa-award"></i> Eco-Impact Score</h2>
+          <div class="waste-prediction-summary">
+            <div class="progress-circle" id="ecoImpactCircle">
+              <div class="progress-circle-inner" id="ecoImpactScore">0%</div>
+            </div>
+            <p id="ecoImpactMessage">Mark items as Donated to raise your Eco-Impact Score and prevent grocery waste!</p>
+          </div>
+        </section>
+
+        <!-- Pie Chart Section -->
+        <section class="card">
+          <h2><i class="fas fa-chart-pie"></i> Inventory Distribution</h2>
+          <div class="chart-container">
+            <canvas id="monthlyPieChart"></canvas>
+          </div>
+        </section>
+
+        <!-- Live Geolocation NGOs Section -->
+        <section class="card" id="ngo-section">
+          <h2><i class="fas fa-map-marker-alt"></i> Nearby Food Banks & NGOs</h2>
+          <p class="map-status-text" id="locationStatus">Locating nearby NGOs...</p>
+          <div id="leafletMap"></div>
+          <div class="ngo-list" id="ngoList">
+            <!-- Populated dynamically -->
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== MODALS ==================== -->
+
+  <!-- 1. Edit Item Modal -->
+  <div class="modal" id="editModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3><i class="fas fa-edit"></i> Edit Grocery Item</h3>
+        <button class="modal-close" onclick="closeModal('editModal')">&times;</button>
+      </div>
+      <form id="editForm">
+        <input type="hidden" id="editItemId" />
+        <div class="form-group" style="margin-bottom: 12px;">
+          <label for="editItemName">Item Name</label>
+          <input type="text" id="editItemName" class="form-control" required />
+        </div>
+        <div class="form-group" style="margin-bottom: 12px;">
+          <label for="editItemCategory">Category</label>
+          <select id="editItemCategory" class="form-control" required>
+            <option value="Dairy">Dairy</option>
+            <option value="Fruits">Fruits</option>
+            <option value="Vegetables">Vegetables</option>
+            <option value="Meat/Fish">Meat & Fish</option>
+            <option value="Bakery">Bakery</option>
+            <option value="Pantry/Grains">Pantry & Grains</option>
+            <option value="Frozen Foods">Frozen Foods</option>
+          </select>
+        </div>
+        <div class="form-group" style="margin-bottom: 12px;">
+          <label for="editQuantity">Quantity</label>
+          <input type="number" id="editQuantity" class="form-control" min="0.1" step="0.1" required />
+        </div>
+        <div class="form-group" style="margin-bottom: 12px;">
+          <label for="editPurchaseDate">Purchase Date</label>
+          <input type="date" id="editPurchaseDate" class="form-control" required />
+        </div>
+        <div class="form-group" style="margin-bottom: 12px;">
+          <label for="editExpirationDate">Expiration Date</label>
+          <input type="date" id="editExpirationDate" class="form-control" required />
+        </div>
+        <div class="modal-buttons">
+          <button type="button" class="btn-ghost" onclick="closeModal('editModal')">Cancel</button>
+          <button type="submit" class="btn-primary">Save Changes</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- 2. Delete Confirmation Modal -->
+  <div class="modal" id="deleteModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3><i class="fas fa-trash-alt"></i> Delete Grocery Item</h3>
+        <button class="modal-close" onclick="closeModal('deleteModal')">&times;</button>
+      </div>
+      <p style="margin: 12px 0 20px; font-size: 0.95rem; color: var(--text-secondary);">Are you sure you want to permanently delete this item? This action cannot be undone.</p>
+      <input type="hidden" id="deleteItemId" />
+      <div class="modal-buttons">
+        <button type="button" class="btn-ghost" onclick="closeModal('deleteModal')">Cancel</button>
+        <button type="button" class="btn-danger" id="confirmDeleteBtn">Delete</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. Recipe Suggestions Modal -->
+  <div class="modal" id="recipeModal">
+    <div class="modal-content" style="max-width: 550px;">
+      <div class="modal-header">
+        <h3><i class="fas fa-utensils"></i> Cook-to-Save Recipes</h3>
+        <button class="modal-close" onclick="closeModal('recipeModal')">&times;</button>
+      </div>
+      <div class="recipe-details-body" id="recipeModalBody">
+        <!-- Rendered dynamically -->
+      </div>
+      <div class="modal-buttons">
+        <button type="button" class="btn-primary" onclick="closeModal('recipeModal')">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Bubbles -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- Main script link -->
+  <script src="js/script.js"></script>
+</body>
+</html>

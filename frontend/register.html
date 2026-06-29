@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Register - Grocery Waste Predictor</title>
+  <link rel="stylesheet" href="css/style.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
+</head>
+<body data-theme="light">
+  <div class="auth-container">
+    <div class="auth-box">
+      <h2>Create Account</h2>
+      <p class="subtitle">Grocery Waste Predictor & Donation Matching</p>
+      
+      <form id="registerForm">
+        <div class="input-group">
+          <i class="fas fa-user"></i>
+          <input type="text" id="regUsername" placeholder="Username" required />
+        </div>
+        <div class="input-group">
+          <i class="fas fa-envelope"></i>
+          <input type="email" id="regEmail" placeholder="Email Address" required />
+        </div>
+        <div class="input-group">
+          <i class="fas fa-lock"></i>
+          <input type="password" id="regPassword" placeholder="Password" required />
+        </div>
+        <div class="input-group">
+          <i class="fas fa-shield-alt"></i>
+          <input type="password" id="regConfirmPassword" placeholder="Confirm Password" required />
+        </div>
+        <button type="submit" class="btn-primary">
+          <i class="fas fa-user-plus"></i> Register
+        </button>
+      </form>
+      
+      <p class="redirect-text">Already have an account? <a href="login.html">Login here</a></p>
+    </div>
+  </div>
+
+  <div class="toast-container" id="toastContainer"></div>
+
+  <script>
+    // Toast Notification helper
+    function showToast(message, type = 'success') {
+      const container = document.getElementById('toastContainer');
+      const toast = document.createElement('div');
+      toast.className = `toast toast-${type}`;
+      
+      let icon = 'fa-check-circle';
+      if (type === 'warning') icon = 'fa-exclamation-triangle';
+      if (type === 'danger') icon = 'fa-times-circle';
+      
+      toast.innerHTML = `
+        <i class="fas ${icon} toast-icon"></i>
+        <span class="toast-message">${message}</span>
+      `;
+      
+      container.appendChild(toast);
+      
+      // Trigger slide in
+      setTimeout(() => toast.classList.add('show'), 50);
+      
+      // Remove after 4 seconds
+      setTimeout(() => {
+        toast.classList.remove('show');
+        setTimeout(() => toast.remove(), 400);
+      }, 4000);
+    }
+
+    document.getElementById("registerForm").addEventListener("submit", async function (e) {
+      e.preventDefault();
+
+      const username = document.getElementById("regUsername").value.trim();
+      const email = document.getElementById("regEmail").value.trim();
+      const password = document.getElementById("regPassword").value;
+      const confirmPassword = document.getElementById("regConfirmPassword").value;
+
+      if (password !== confirmPassword) {
+        showToast("Passwords do not match!", "danger");
+        return;
+      }
+
+      try {
+        const response = await fetch("http://127.0.0.1:8000/api/register", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({ username, email, password })
+        });
+
+        if (!response.ok) {
+          const error = await response.json();
+          showToast(error.detail || "Registration failed", "danger");
+          return;
+        }
+
+        showToast("Registration successful! Redirecting to login...", "success");
+        setTimeout(() => {
+          window.location.href = "login.html";
+        }, 1500);
+        
+      } catch (err) {
+        showToast("Could not connect to the server. Is the backend running?", "danger");
+        console.error(err);
+      }
+    });
+  </script>
+</body>
+</html>

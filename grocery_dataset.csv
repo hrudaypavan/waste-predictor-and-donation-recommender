@@ -1,0 +1,501 @@
+item_name,category,quantity,days_to_expiry,storage_temperature,perishability_index,estimated_waste_pct
+Frozen Pizza,Frozen Foods,8.17,15,-18,1,36.14
+Yogurt,Fruits,2.4,11,27,2,90.6
+Cheese,Bakery,6.41,24,27,3,80.94
+Cheese,Bakery,6.56,26,35,3,89.58
+Tomato,Dairy,3.62,27,4,3,55.79
+Bread,Meat/Fish,5.63,25,6,3,63.23
+Bread,Vegetables,7.12,9,25,2,87.05
+Frozen Pizza,Fruits,7.16,15,30,2,89.83
+Yogurt,Meat/Fish,5.46,15,6,3,77.7
+Salmon,Meat/Fish,3.81,6,4,3,90.71
+Salmon,Pantry/Grains,1.28,18,25,1,43.65
+Banana,Pantry/Grains,7.55,15,30,1,65.34
+Spinach,Pantry/Grains,3.93,16,35,1,72.58
+Banana,Dairy,3.53,28,14,3,60.74
+Tomato,Bakery,8.22,1,23,3,100.0
+Frozen Pizza,Vegetables,7.94,5,25,2,100.0
+Frozen Pizza,Fruits,2.04,7,23,2,77.81
+Tomato,Frozen Foods,7.02,5,-18,1,52.02
+Tomato,Meat/Fish,6.74,27,6,3,57.2
+Banana,Dairy,7.5,23,6,3,68.92
+Frozen Pizza,Frozen Foods,4.85,10,-18,1,29.51
+Frozen Pizza,Dairy,3.83,4,14,3,98.39
+Cheese,Frozen Foods,4.69,11,-18,1,42.85
+Rice,Fruits,6.62,25,35,2,77.56
+Spinach,Meat/Fish,8.23,12,9,3,89.57
+Milk,Frozen Foods,9.06,7,-18,1,50.82
+Rice,Dairy,3.05,25,9,3,56.61
+Tomato,Vegetables,4.76,5,23,2,86.51
+Banana,Fruits,4.04,15,27,2,80.02
+Salmon,Meat/Fish,4.27,17,4,3,62.72
+Milk,Meat/Fish,3.27,2,6,3,90.36
+Rice,Vegetables,6.49,2,30,2,98.82
+Bread,Frozen Foods,3.51,1,-18,1,55.48
+Frozen Pizza,Meat/Fish,5.03,6,9,3,99.57
+Chicken,Vegetables,4.33,17,35,2,89.72
+Banana,Frozen Foods,1.81,1,-18,1,53.24
+Salmon,Meat/Fish,5.57,16,14,3,81.81
+Frozen Pizza,Vegetables,7.4,19,30,2,83.67
+Banana,Meat/Fish,9.46,8,4,3,94.97
+Frozen Pizza,Dairy,2.88,10,6,3,87.89
+Milk,Meat/Fish,2.57,16,2,3,62.14
+Frozen Pizza,Pantry/Grains,9.07,5,27,1,85.58
+Milk,Dairy,3.51,19,6,3,69.08
+Rice,Meat/Fish,1.76,8,9,3,92.64
+Rice,Meat/Fish,6.23,16,2,3,75.95
+Milk,Vegetables,6.87,9,30,2,87.66
+Tomato,Meat/Fish,3.14,21,9,3,76.18
+Chicken,Dairy,3.77,16,9,3,74.05
+Chicken,Vegetables,6.73,22,35,2,82.62
+Milk,Fruits,4.15,1,30,2,100.0
+Milk,Bakery,3.07,16,27,3,98.69
+Rice,Meat/Fish,9.46,29,14,3,71.04
+Tomato,Vegetables,7.73,5,35,2,100.0
+Frozen Pizza,Meat/Fish,8.68,29,14,3,67.75
+Tomato,Dairy,3.85,18,2,3,74.7
+Chicken,Pantry/Grains,1.87,15,25,1,58.07
+Frozen Pizza,Fruits,8.9,17,23,2,80.67
+Apple,Bakery,3.67,26,27,3,73.36
+Tomato,Dairy,6.5,28,4,3,56.22
+Apple,Frozen Foods,1.25,2,-18,1,43.46
+Rice,Frozen Foods,7.05,19,-18,1,37.13
+Spinach,Fruits,8.74,17,30,2,74.66
+Cheese,Pantry/Grains,3.73,11,30,1,76.81
+Rice,Meat/Fish,9.69,7,9,3,95.77
+Apple,Bakery,2.75,15,27,3,99.22
+Yogurt,Meat/Fish,7.43,19,2,3,76.16
+Spinach,Frozen Foods,4.9,26,-18,1,8.62
+Yogurt,Fruits,2.41,2,23,2,100.0
+Rice,Bakery,3.52,16,35,3,100.0
+Tomato,Bakery,4.78,12,25,3,100.0
+Cheese,Bakery,2.08,29,30,3,75.22
+Milk,Fruits,7.87,21,30,2,80.82
+Apple,Pantry/Grains,4.9,23,25,1,59.1
+Spinach,Meat/Fish,4.37,26,6,3,67.66
+Apple,Dairy,5.85,13,9,3,87.56
+Yogurt,Dairy,8.8,27,9,3,68.01
+Bread,Meat/Fish,4.49,28,2,3,65.66
+Chicken,Meat/Fish,4.47,1,4,3,87.31
+Frozen Pizza,Meat/Fish,3.47,12,4,3,79.91
+Spinach,Dairy,6.9,29,4,3,55.83
+Apple,Fruits,4.07,19,23,2,79.54
+Banana,Bakery,9.43,24,30,3,89.12
+Tomato,Bakery,9.71,4,25,3,100.0
+Milk,Dairy,7.58,4,4,3,86.93
+Banana,Frozen Foods,6.22,23,-18,1,26.33
+Salmon,Vegetables,1.93,17,23,2,68.02
+Salmon,Dairy,3.88,27,6,3,60.58
+Bread,Vegetables,5.44,16,35,2,84.87
+Bread,Vegetables,6.42,20,27,2,72.59
+Bread,Fruits,9.77,14,25,2,86.97
+Rice,Vegetables,8.99,11,27,2,93.96
+Spinach,Frozen Foods,4.83,8,-18,1,46.19
+Frozen Pizza,Dairy,8.4,26,4,3,70.05
+Tomato,Dairy,6.33,4,9,3,96.41
+Tomato,Bakery,4.4,7,27,3,100.0
+Salmon,Bakery,1.1,28,25,3,63.46
+Banana,Meat/Fish,7.9,9,2,3,82.06
+Yogurt,Frozen Foods,5.3,25,-18,1,18.27
+Bread,Dairy,3.01,6,4,3,88.94
+Apple,Meat/Fish,5.98,20,2,3,68.84
+Frozen Pizza,Frozen Foods,6.66,14,-18,1,28.11
+Yogurt,Dairy,9.24,10,9,3,100.0
+Cheese,Meat/Fish,4.02,26,9,3,56.98
+Salmon,Fruits,3.39,5,23,2,97.92
+Cheese,Vegetables,7.28,17,23,2,81.39
+Rice,Bakery,2.2,3,35,3,100.0
+Apple,Fruits,4.75,5,23,2,95.1
+Rice,Vegetables,1.41,23,23,2,59.93
+Banana,Dairy,5.32,15,2,3,82.35
+Milk,Pantry/Grains,8.46,17,35,1,69.27
+Bread,Fruits,1.33,1,35,2,100.0
+Milk,Bakery,9.5,10,27,3,100.0
+Milk,Bakery,5.05,14,23,3,94.07
+Yogurt,Dairy,7.81,2,9,3,100.0
+Apple,Frozen Foods,7.04,2,-18,1,57.43
+Chicken,Meat/Fish,8.35,12,14,3,92.76
+Tomato,Dairy,6.31,15,14,3,93.72
+Apple,Frozen Foods,2.23,28,-18,1,10.66
+Banana,Pantry/Grains,6.47,18,27,1,63.62
+Frozen Pizza,Pantry/Grains,5.06,15,30,1,65.3
+Yogurt,Fruits,8.76,5,35,2,97.5
+Chicken,Bakery,9.82,21,25,3,90.01
+Chicken,Vegetables,3.16,19,23,2,80.4
+Yogurt,Pantry/Grains,7.28,4,30,1,81.23
+Spinach,Dairy,9.07,3,6,3,96.26
+Cheese,Vegetables,1.37,5,25,2,91.66
+Apple,Fruits,2.59,21,23,2,54.28
+Banana,Dairy,5.53,13,6,3,84.5
+Milk,Fruits,8.19,25,27,2,73.19
+Cheese,Vegetables,2.66,15,25,2,72.59
+Frozen Pizza,Frozen Foods,5.78,2,-18,1,53.79
+Apple,Pantry/Grains,7.75,28,35,1,50.36
+Frozen Pizza,Fruits,4.19,19,23,2,66.07
+Cheese,Dairy,8.57,22,4,3,73.36
+Apple,Dairy,9.01,20,2,3,77.69
+Apple,Frozen Foods,6.26,22,-18,1,23.38
+Bread,Frozen Foods,7.71,17,-18,1,19.31
+Yogurt,Pantry/Grains,9.1,2,27,1,94.85
+Rice,Vegetables,9.88,5,23,2,95.95
+Yogurt,Pantry/Grains,3.21,4,27,1,78.26
+Salmon,Frozen Foods,8.58,3,-18,1,38.88
+Cheese,Frozen Foods,9.07,20,-18,1,29.91
+Banana,Vegetables,8.79,6,23,2,100.0
+Tomato,Fruits,6.01,8,25,2,89.84
+Milk,Bakery,7.93,6,25,3,100.0
+Spinach,Meat/Fish,3.18,15,2,3,63.89
+Tomato,Pantry/Grains,3.6,5,27,1,77.43
+Bread,Dairy,4.32,24,4,3,64.77
+Milk,Frozen Foods,5.94,2,-18,1,54.76
+Banana,Frozen Foods,7.13,17,-18,1,25.78
+Cheese,Vegetables,5.26,6,27,2,96.8
+Banana,Meat/Fish,4.68,21,6,3,67.9
+Yogurt,Fruits,2.63,3,23,2,94.5
+Tomato,Vegetables,8.16,14,30,2,95.69
+Banana,Bakery,2.68,19,27,3,90.02
+Rice,Bakery,6.29,18,27,3,93.37
+Frozen Pizza,Dairy,7.73,15,2,3,80.01
+Frozen Pizza,Fruits,5.89,8,27,2,90.57
+Milk,Vegetables,4.88,3,27,2,93.59
+Rice,Meat/Fish,7.67,27,9,3,63.91
+Chicken,Dairy,3.81,5,6,3,99.42
+Salmon,Fruits,4.08,6,35,2,100.0
+Salmon,Bakery,2.15,24,35,3,79.48
+Tomato,Meat/Fish,7.95,27,6,3,78.72
+Spinach,Meat/Fish,5.88,11,6,3,80.07
+Chicken,Pantry/Grains,3.05,23,25,1,46.59
+Cheese,Meat/Fish,9.21,8,4,3,91.23
+Bread,Vegetables,9.39,4,30,2,100.0
+Rice,Bakery,7.37,10,23,3,100.0
+Rice,Vegetables,7.63,8,23,2,97.28
+Yogurt,Vegetables,5.06,14,35,2,88.35
+Bread,Frozen Foods,4.59,9,-18,1,43.08
+Salmon,Dairy,2.85,25,14,3,62.54
+Frozen Pizza,Dairy,8.77,6,4,3,95.96
+Chicken,Fruits,5.33,27,23,2,57.08
+Rice,Vegetables,3.23,25,30,2,65.79
+Cheese,Bakery,9.23,17,35,3,100.0
+Salmon,Fruits,6.97,7,23,2,96.9
+Frozen Pizza,Dairy,2.34,22,9,3,60.31
+Chicken,Dairy,3.79,23,6,3,65.59
+Yogurt,Vegetables,4.14,29,23,2,54.71
+Apple,Vegetables,1.59,14,27,2,74.79
+Salmon,Fruits,5.81,17,25,2,84.43
+Spinach,Dairy,4.01,23,6,3,65.02
+Tomato,Fruits,9.08,2,30,2,100.0
+Yogurt,Frozen Foods,7.05,29,-18,1,0.0
+Yogurt,Pantry/Grains,4.05,5,27,1,79.68
+Salmon,Fruits,8.25,24,27,2,75.39
+Cheese,Meat/Fish,7.01,21,4,3,71.75
+Salmon,Fruits,9.03,15,35,2,85.09
+Bread,Vegetables,3.33,2,27,2,89.82
+Bread,Bakery,4.68,9,25,3,100.0
+Milk,Meat/Fish,2.98,26,9,3,66.63
+Yogurt,Fruits,1.2,14,23,2,73.69
+Salmon,Fruits,6.7,7,23,2,91.8
+Frozen Pizza,Fruits,5.73,13,25,2,81.46
+Apple,Bakery,1.17,18,35,3,92.36
+Cheese,Dairy,4.65,6,4,3,96.57
+Cheese,Frozen Foods,1.96,22,-18,1,16.23
+Milk,Bakery,6.99,7,25,3,100.0
+Tomato,Fruits,4.64,26,25,2,64.16
+Bread,Bakery,6.43,26,35,3,83.09
+Rice,Vegetables,3.6,4,23,2,95.46
+Yogurt,Fruits,4.57,24,35,2,79.99
+Milk,Dairy,3.43,15,9,3,80.23
+Banana,Pantry/Grains,9.6,11,25,1,73.61
+Chicken,Fruits,5.27,9,23,2,80.99
+Apple,Fruits,5.14,3,27,2,89.36
+Chicken,Bakery,1.02,19,25,3,81.19
+Banana,Vegetables,9.66,17,25,2,77.8
+Yogurt,Frozen Foods,5.69,12,-18,1,39.75
+Bread,Frozen Foods,8.26,23,-18,1,21.61
+Chicken,Pantry/Grains,6.74,8,23,1,75.82
+Frozen Pizza,Fruits,1.46,26,25,2,61.43
+Frozen Pizza,Dairy,2.63,21,4,3,61.19
+Chicken,Dairy,2.73,8,4,3,82.67
+Spinach,Frozen Foods,8.16,20,-18,1,23.06
+Tomato,Frozen Foods,1.33,24,-18,1,15.63
+Frozen Pizza,Meat/Fish,2.09,2,6,3,89.09
+Yogurt,Frozen Foods,1.59,15,-18,1,31.4
+Spinach,Dairy,5.85,22,2,3,66.34
+Spinach,Meat/Fish,3.1,23,6,3,72.58
+Tomato,Fruits,1.19,23,35,2,73.5
+Milk,Vegetables,9.98,20,35,2,85.21
+Banana,Bakery,1.34,12,23,3,83.98
+Bread,Fruits,1.83,7,30,2,93.53
+Salmon,Dairy,3.15,3,14,3,93.76
+Bread,Fruits,3.1,25,23,2,55.03
+Chicken,Pantry/Grains,1.41,15,23,1,52.82
+Cheese,Fruits,8.18,5,27,2,97.54
+Yogurt,Pantry/Grains,9.84,14,27,1,71.92
+Tomato,Meat/Fish,8.54,22,14,3,78.72
+Spinach,Bakery,2.08,11,25,3,93.92
+Rice,Vegetables,8.44,5,35,2,100.0
+Apple,Frozen Foods,2.95,9,-18,1,33.77
+Tomato,Fruits,7.26,24,27,2,63.45
+Apple,Pantry/Grains,6.61,29,23,1,50.57
+Cheese,Vegetables,8.9,3,27,2,100.0
+Yogurt,Bakery,9.0,25,25,3,84.73
+Yogurt,Dairy,5.96,27,4,3,61.52
+Rice,Meat/Fish,4.35,8,6,3,87.86
+Bread,Bakery,2.98,13,30,3,100.0
+Spinach,Bakery,8.66,8,35,3,100.0
+Milk,Vegetables,4.13,2,27,2,95.9
+Banana,Pantry/Grains,5.69,16,30,1,70.93
+Frozen Pizza,Bakery,7.12,27,30,3,84.58
+Frozen Pizza,Bakery,8.93,26,23,3,78.26
+Cheese,Frozen Foods,1.01,2,-18,1,39.64
+Milk,Frozen Foods,2.74,13,-18,1,30.34
+Tomato,Frozen Foods,4.39,24,-18,1,15.1
+Cheese,Pantry/Grains,3.55,7,25,1,79.69
+Rice,Meat/Fish,2.62,5,14,3,95.66
+Rice,Meat/Fish,2.56,4,4,3,94.04
+Apple,Dairy,1.52,24,6,3,65.51
+Salmon,Fruits,9.91,15,35,2,100.0
+Milk,Bakery,4.45,29,27,3,69.74
+Apple,Pantry/Grains,4.35,19,27,1,55.54
+Banana,Bakery,9.5,3,35,3,100.0
+Apple,Frozen Foods,5.74,29,-18,1,3.89
+Chicken,Frozen Foods,7.12,22,-18,1,24.69
+Bread,Vegetables,8.81,12,30,2,93.73
+Bread,Vegetables,9.68,19,23,2,77.73
+Tomato,Vegetables,3.81,26,30,2,69.28
+Cheese,Dairy,6.87,12,4,3,87.74
+Chicken,Vegetables,9.71,14,23,2,85.77
+Cheese,Pantry/Grains,5.77,7,27,1,80.31
+Frozen Pizza,Bakery,9.21,26,27,3,82.84
+Banana,Dairy,6.47,20,9,3,68.25
+Chicken,Pantry/Grains,3.03,28,35,1,53.84
+Apple,Bakery,2.35,21,25,3,78.05
+Rice,Pantry/Grains,9.77,6,27,1,88.26
+Yogurt,Dairy,1.36,22,6,3,65.56
+Apple,Dairy,3.18,25,9,3,66.14
+Banana,Meat/Fish,1.65,1,2,3,100.0
+Rice,Bakery,1.74,13,30,3,89.66
+Apple,Frozen Foods,2.81,26,-18,1,4.43
+Tomato,Frozen Foods,2.8,23,-18,1,16.22
+Frozen Pizza,Vegetables,1.28,6,23,2,86.61
+Chicken,Frozen Foods,5.87,18,-18,1,31.97
+Salmon,Frozen Foods,1.72,20,-18,1,20.46
+Cheese,Pantry/Grains,8.36,26,27,1,61.06
+Tomato,Frozen Foods,6.85,25,-18,1,14.02
+Bread,Fruits,3.96,14,30,2,85.61
+Apple,Frozen Foods,1.39,12,-18,1,31.15
+Tomato,Pantry/Grains,7.47,22,35,1,58.33
+Frozen Pizza,Bakery,1.65,15,23,3,90.7
+Salmon,Meat/Fish,2.57,21,4,3,62.37
+Yogurt,Meat/Fish,4.34,20,9,3,80.28
+Salmon,Fruits,8.8,9,30,2,95.65
+Tomato,Fruits,6.38,4,25,2,94.79
+Bread,Vegetables,3.55,29,30,2,56.4
+Yogurt,Frozen Foods,3.12,26,-18,1,0.0
+Banana,Meat/Fish,9.18,23,4,3,71.34
+Salmon,Pantry/Grains,1.88,29,23,1,35.69
+Tomato,Fruits,1.86,17,27,2,68.96
+Yogurt,Bakery,1.08,1,30,3,100.0
+Spinach,Meat/Fish,9.73,15,6,3,83.22
+Bread,Bakery,4.03,9,23,3,100.0
+Cheese,Meat/Fish,6.29,12,2,3,77.44
+Cheese,Dairy,6.45,15,14,3,79.92
+Rice,Bakery,8.04,24,30,3,93.12
+Apple,Meat/Fish,5.86,20,4,3,69.42
+Bread,Dairy,5.78,20,4,3,73.8
+Spinach,Dairy,5.57,14,9,3,82.47
+Yogurt,Meat/Fish,9.88,24,6,3,75.24
+Cheese,Frozen Foods,5.7,23,-18,1,19.67
+Frozen Pizza,Pantry/Grains,2.26,13,30,1,62.52
+Rice,Fruits,2.7,23,35,2,74.96
+Apple,Bakery,9.67,15,25,3,98.59
+Cheese,Dairy,8.48,15,2,3,79.14
+Bread,Vegetables,9.38,14,30,2,83.87
+Apple,Bakery,6.19,28,25,3,78.78
+Chicken,Pantry/Grains,3.86,1,23,1,80.23
+Rice,Meat/Fish,6.85,6,9,3,93.89
+Chicken,Vegetables,8.27,18,35,2,84.44
+Bread,Dairy,2.08,22,2,3,67.98
+Cheese,Frozen Foods,6.67,26,-18,1,22.58
+Tomato,Bakery,5.04,17,23,3,84.71
+Apple,Meat/Fish,1.13,11,6,3,81.91
+Yogurt,Pantry/Grains,5.5,21,25,1,49.86
+Apple,Fruits,5.31,21,35,2,72.09
+Frozen Pizza,Bakery,3.21,4,27,3,100.0
+Chicken,Pantry/Grains,7.72,12,27,1,79.46
+Cheese,Frozen Foods,9.07,21,-18,1,25.42
+Rice,Frozen Foods,3.19,11,-18,1,26.84
+Bread,Vegetables,1.91,29,30,2,55.39
+Salmon,Meat/Fish,7.03,29,9,3,52.58
+Salmon,Pantry/Grains,7.45,17,35,1,73.42
+Frozen Pizza,Fruits,2.1,11,30,2,85.54
+Spinach,Frozen Foods,1.96,10,-18,1,26.28
+Chicken,Meat/Fish,4.82,22,2,3,66.77
+Rice,Bakery,6.41,22,35,3,81.31
+Spinach,Meat/Fish,3.05,9,4,3,81.05
+Apple,Dairy,3.13,5,9,3,88.05
+Spinach,Vegetables,8.66,7,25,2,97.83
+Tomato,Dairy,4.82,5,2,3,93.28
+Chicken,Meat/Fish,8.77,23,14,3,83.34
+Banana,Fruits,3.31,13,35,2,95.59
+Frozen Pizza,Pantry/Grains,2.28,3,35,1,83.14
+Tomato,Dairy,7.23,7,9,3,100.0
+Banana,Meat/Fish,7.52,10,14,3,89.72
+Cheese,Frozen Foods,1.62,17,-18,1,18.49
+Yogurt,Fruits,7.03,12,27,2,80.3
+Spinach,Fruits,7.12,12,35,2,97.67
+Apple,Vegetables,2.71,2,30,2,100.0
+Rice,Frozen Foods,5.19,8,-18,1,49.56
+Frozen Pizza,Meat/Fish,1.8,5,14,3,100.0
+Milk,Fruits,1.87,25,30,2,67.22
+Bread,Meat/Fish,9.83,3,14,3,100.0
+Bread,Meat/Fish,6.61,18,2,3,76.48
+Bread,Meat/Fish,8.04,2,14,3,100.0
+Chicken,Fruits,9.43,9,23,2,84.56
+Tomato,Vegetables,4.57,23,25,2,67.93
+Bread,Pantry/Grains,5.47,22,30,1,70.03
+Tomato,Meat/Fish,2.88,15,2,3,72.96
+Frozen Pizza,Pantry/Grains,8.9,14,27,1,70.79
+Apple,Meat/Fish,8.37,15,14,3,92.3
+Milk,Dairy,5.31,1,9,3,100.0
+Rice,Pantry/Grains,9.08,14,35,1,79.34
+Apple,Dairy,7.0,2,14,3,100.0
+Cheese,Meat/Fish,2.22,4,14,3,100.0
+Cheese,Bakery,9.43,20,25,3,91.58
+Frozen Pizza,Frozen Foods,6.77,29,-18,1,10.47
+Apple,Vegetables,4.48,5,27,2,93.32
+Banana,Fruits,2.91,11,25,2,82.73
+Bread,Frozen Foods,3.15,3,-18,1,43.2
+Milk,Dairy,8.04,14,6,3,86.2
+Bread,Meat/Fish,6.7,8,2,3,83.03
+Frozen Pizza,Frozen Foods,2.99,29,-18,1,8.18
+Tomato,Fruits,2.18,20,35,2,87.06
+Rice,Frozen Foods,5.73,22,-18,1,22.18
+Bread,Bakery,1.1,2,27,3,100.0
+Bread,Pantry/Grains,8.11,21,25,1,53.27
+Bread,Dairy,3.91,26,4,3,61.79
+Chicken,Bakery,8.21,13,30,3,97.42
+Bread,Frozen Foods,5.49,23,-18,1,13.88
+Tomato,Fruits,2.14,2,30,2,100.0
+Bread,Dairy,6.53,29,4,3,51.34
+Apple,Fruits,9.03,9,23,2,93.06
+Apple,Meat/Fish,1.69,1,4,3,94.56
+Yogurt,Fruits,3.28,8,35,2,94.84
+Cheese,Vegetables,5.05,17,23,2,80.52
+Yogurt,Frozen Foods,5.67,19,-18,1,20.88
+Tomato,Dairy,7.72,1,14,3,100.0
+Salmon,Vegetables,1.11,5,30,2,88.82
+Cheese,Vegetables,9.74,19,27,2,86.28
+Spinach,Vegetables,2.57,5,35,2,100.0
+Milk,Pantry/Grains,1.74,16,30,1,65.69
+Apple,Frozen Foods,8.04,8,-18,1,36.14
+Banana,Vegetables,2.09,4,23,2,97.42
+Yogurt,Dairy,5.77,18,4,3,69.91
+Apple,Fruits,6.42,21,30,2,79.84
+Chicken,Vegetables,1.39,17,25,2,68.2
+Rice,Pantry/Grains,4.95,25,25,1,42.04
+Yogurt,Meat/Fish,3.17,21,9,3,70.55
+Cheese,Bakery,3.57,23,23,3,77.36
+Frozen Pizza,Dairy,5.9,21,14,3,78.64
+Banana,Meat/Fish,1.48,22,6,3,71.58
+Salmon,Pantry/Grains,5.86,13,25,1,69.14
+Frozen Pizza,Vegetables,9.69,15,27,2,82.31
+Rice,Meat/Fish,7.6,11,14,3,95.02
+Banana,Vegetables,2.36,7,30,2,100.0
+Spinach,Bakery,2.44,10,25,3,96.88
+Frozen Pizza,Fruits,2.84,10,35,2,87.15
+Spinach,Vegetables,2.69,9,35,2,100.0
+Banana,Fruits,8.56,12,23,2,98.8
+Rice,Fruits,7.83,20,27,2,79.16
+Salmon,Vegetables,9.97,4,35,2,100.0
+Rice,Meat/Fish,8.02,22,6,3,73.4
+Salmon,Frozen Foods,1.03,6,-18,1,33.46
+Tomato,Meat/Fish,8.15,20,2,3,68.62
+Salmon,Bakery,6.22,23,30,3,99.75
+Milk,Pantry/Grains,5.38,18,27,1,64.95
+Yogurt,Frozen Foods,1.69,22,-18,1,11.88
+Salmon,Bakery,7.71,26,35,3,88.7
+Apple,Pantry/Grains,3.95,23,23,1,56.03
+Banana,Frozen Foods,2.99,27,-18,1,11.77
+Rice,Meat/Fish,3.69,1,2,3,98.03
+Spinach,Meat/Fish,5.47,15,6,3,83.11
+Apple,Bakery,2.66,29,25,3,74.07
+Tomato,Vegetables,1.24,17,35,2,81.13
+Tomato,Bakery,1.51,3,25,3,100.0
+Bread,Bakery,8.58,5,30,3,100.0
+Tomato,Meat/Fish,2.2,4,4,3,96.79
+Cheese,Dairy,8.02,4,2,3,97.0
+Salmon,Dairy,7.76,24,2,3,59.43
+Tomato,Bakery,1.62,12,25,3,89.06
+Spinach,Frozen Foods,9.16,24,-18,1,16.13
+Salmon,Pantry/Grains,4.86,25,35,1,52.74
+Banana,Vegetables,1.56,26,27,2,57.05
+Apple,Bakery,5.79,1,27,3,100.0
+Spinach,Vegetables,9.67,15,35,2,90.7
+Bread,Fruits,4.77,14,23,2,80.16
+Tomato,Vegetables,7.53,5,23,2,94.91
+Banana,Vegetables,9.75,12,23,2,84.06
+Milk,Frozen Foods,7.15,1,-18,1,60.83
+Milk,Bakery,3.05,28,25,3,78.85
+Milk,Dairy,6.52,14,4,3,81.07
+Tomato,Fruits,2.49,2,23,2,91.15
+Chicken,Bakery,7.74,12,30,3,100.0
+Salmon,Fruits,9.8,19,23,2,73.43
+Rice,Fruits,3.97,14,30,2,78.77
+Chicken,Frozen Foods,2.84,21,-18,1,12.64
+Spinach,Bakery,5.06,26,30,3,83.37
+Salmon,Dairy,1.24,25,6,3,59.21
+Chicken,Vegetables,1.95,20,23,2,70.15
+Yogurt,Fruits,1.84,5,27,2,88.67
+Bread,Meat/Fish,8.14,4,14,3,100.0
+Spinach,Frozen Foods,6.78,15,-18,1,31.58
+Frozen Pizza,Meat/Fish,7.26,12,4,3,88.18
+Cheese,Vegetables,4.27,27,25,2,59.76
+Cheese,Dairy,1.3,8,14,3,84.34
+Frozen Pizza,Vegetables,3.82,6,27,2,93.14
+Bread,Dairy,4.76,23,14,3,73.62
+Frozen Pizza,Pantry/Grains,6.71,4,30,1,85.12
+Salmon,Vegetables,7.18,3,23,2,100.0
+Rice,Dairy,8.41,26,14,3,74.71
+Apple,Vegetables,7.84,25,27,2,67.33
+Tomato,Frozen Foods,6.87,9,-18,1,39.88
+Cheese,Meat/Fish,4.02,26,14,3,55.82
+Apple,Fruits,1.91,21,27,2,65.43
+Bread,Fruits,6.52,23,23,2,62.12
+Apple,Meat/Fish,5.24,15,6,3,74.07
+Frozen Pizza,Fruits,3.83,24,30,2,69.22
+Tomato,Pantry/Grains,8.7,28,23,1,44.3
+Tomato,Meat/Fish,8.8,15,14,3,93.14
+Apple,Dairy,3.74,14,9,3,84.3
+Frozen Pizza,Vegetables,9.16,27,27,2,70.44
+Tomato,Vegetables,2.0,24,30,2,60.64
+Milk,Pantry/Grains,8.22,27,30,1,51.85
+Cheese,Dairy,4.79,14,4,3,80.66
+Chicken,Meat/Fish,9.84,14,2,3,86.83
+Yogurt,Meat/Fish,8.46,28,6,3,64.79
+Banana,Dairy,3.18,1,9,3,100.0
+Salmon,Pantry/Grains,6.39,3,23,1,86.81
+Banana,Vegetables,9.13,8,25,2,89.63
+Cheese,Bakery,6.34,9,35,3,100.0
+Bread,Vegetables,3.41,14,25,2,82.07
+Milk,Frozen Foods,6.93,16,-18,1,31.65
+Salmon,Bakery,1.84,29,23,3,72.93
+Tomato,Vegetables,8.46,24,23,2,61.95
+Tomato,Fruits,2.48,22,35,2,72.43
+Cheese,Pantry/Grains,6.33,29,27,1,46.07
+Rice,Meat/Fish,4.46,13,6,3,72.64
+Frozen Pizza,Meat/Fish,9.55,2,6,3,100.0
+Milk,Pantry/Grains,1.64,25,25,1,52.94
+Milk,Bakery,5.25,26,27,3,76.76
+Yogurt,Dairy,3.98,17,6,3,70.62
+Rice,Pantry/Grains,6.5,13,30,1,72.71
+Salmon,Dairy,1.07,8,6,3,76.8
+Spinach,Meat/Fish,3.56,7,14,3,87.72
+Yogurt,Vegetables,1.4,9,23,2,80.0
+Banana,Bakery,3.56,17,35,3,97.29
+Tomato,Frozen Foods,5.44,11,-18,1,24.82
+Cheese,Vegetables,2.18,14,35,2,77.73
+Milk,Bakery,7.43,12,35,3,99.62
+Frozen Pizza,Bakery,7.47,28,25,3,80.4
+Salmon,Pantry/Grains,3.32,23,23,1,49.98
+Tomato,Fruits,3.31,4,23,2,80.61
+Milk,Frozen Foods,4.77,20,-18,1,17.73

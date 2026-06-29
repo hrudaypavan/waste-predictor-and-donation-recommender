@@ -1,0 +1,23 @@
+# Example: Grocery Waste Risk Classification
+from sklearn.tree import DecisionTreeClassifier
+
+# Features: [Days until expiry, Storage temperature]
+X = [
+    [2, 25],   # Almost expired, room temp
+    [10, 4],   # Fresh, fridge
+    [5, 25],   # Medium shelf life, room temp
+    [1, 30]    # Very close to expiry, hot temp
+]
+
+# Labels: 0 = Low Risk, 1 = Medium Risk, 2 = High Risk
+y = [2, 0, 1, 2]
+
+# Create and train the model
+model = DecisionTreeClassifier()
+model.fit(X, y)
+
+# Predict for a new grocery item
+prediction = model.predict([[3, 25]])  # 3 days left, room temp
+risk_levels = ["Low", "Medium", "High"]
+
+print("Predicted Waste Risk:", risk_levels[prediction[0]])
