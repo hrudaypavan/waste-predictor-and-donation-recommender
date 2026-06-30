@@ -770,6 +770,26 @@ table tbody tr:hover {
     color: white;
 }
 
+.action-btn.undo-btn {
+    background-color: #fff3e0;
+    color: #e65100;
+}
+
+.action-btn.undo-btn:hover {
+    background-color: #e65100;
+    color: white;
+}
+
+[data-theme="dark"] .action-btn.undo-btn {
+    background-color: rgba(230, 81, 0, 0.15);
+    color: #ffab40;
+}
+
+[data-theme="dark"] .action-btn.undo-btn:hover {
+    background-color: #e65100;
+    color: white;
+}
+
 /* Donated list item card grid */
 .donated-grid {
     display: grid;

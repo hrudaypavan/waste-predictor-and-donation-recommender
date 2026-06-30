@@ -340,6 +340,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <td>${item.expiration_date}</td>
                 <td>
                     <div class="action-btn-group">
+                        <button class="action-btn undo-btn" onclick="triggerUndoDonate(${item.id})" title="Move back to inventory"><i class="fas fa-undo-alt"></i> Undo</button>
                         <button class="action-btn edit-btn" onclick="triggerEdit(${item.id})"><i class="fas fa-edit"></i> Edit</button>
                         <button class="action-btn delete-btn" onclick="triggerDelete(${item.id})"><i class="fas fa-trash-alt"></i> Delete</button>
                     </div>
@@ -365,6 +366,30 @@ document.addEventListener('DOMContentLoaded', () => {
         } catch (err) {
             console.error(err);
             showToast("Failed to donate item", "danger");
+        }
+    };
+
+    // Undo Donate — move item back to inventory
+    window.triggerUndoDonate = async function(itemId) {
+        const item = inventory.find(i => i.id === itemId);
+        const itemName = item ? item.item_name : "Item";
+        
+        if (!confirm(`Move "${itemName}" back to your inventory?`)) return;
+        
+        try {
+            const response = await fetch(`https://waste-predictor-and-donation-recommender.onrender.com/api/groceries/${itemId}/status`, {
+                method: "PATCH",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ status: "remaining" })
+            });
+            if (!response.ok) throw new Error("Undo donate failed");
+            
+            const restored = await response.json();
+            showToast(`"${restored.item_name}" has been moved back to your inventory!`, "success");
+            loadDashboardData();
+        } catch (err) {
+            console.error(err);
+            showToast("Failed to undo donation", "danger");
         }
     };
 
