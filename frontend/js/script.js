@@ -117,7 +117,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const searchQuery = document.getElementById("searchInput")?.value.trim() || "";
         try {
             // Load inventory lists
-            const url = `http://127.0.0.1:8000/api/groceries?user_id=${userId}&search=${encodeURIComponent(searchQuery)}`;
+            const url = `https://waste-predictor-and-donation-recommender.onrender.com/api/groceries?user_id=${userId}&search=${encodeURIComponent(searchQuery)}`;
             const response = await fetch(url);
             if (!response.ok) throw new Error("Failed to load inventory");
             
@@ -162,7 +162,7 @@ document.addEventListener('DOMContentLoaded', () => {
             };
             
             try {
-                const response = await fetch("http://127.0.0.1:8000/api/groceries", {
+                const response = await fetch("https://waste-predictor-and-donation-recommender.onrender.com/api/groceries", {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify(payload)
@@ -195,7 +195,7 @@ document.addEventListener('DOMContentLoaded', () => {
         confirmDeleteBtn.addEventListener("click", async () => {
             const itemId = document.getElementById("deleteItemId").value;
             try {
-                const response = await fetch(`http://127.0.0.1:8000/api/groceries/${itemId}`, {
+                const response = await fetch(`https://waste-predictor-and-donation-recommender.onrender.com/api/groceries/${itemId}`, {
                     method: "DELETE"
                 });
                 if (!response.ok) throw new Error("Delete failed");
@@ -232,14 +232,13 @@ document.addEventListener('DOMContentLoaded', () => {
             };
             
             try {
-                const response = await fetch(`http://127.0.0.1:8000/api/groceries/${itemId}`, {
+                const response = await fetch(`https://waste-predictor-and-donation-recommender.onrender.com/api/groceries/${itemId}`, {
                     method: "PUT",
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify(payload)
                 });
                 
                 if (!response.ok) throw new Error("Update failed");
-                
                 showToast("Grocery item successfully updated!", "success");
                 closeModal("editModal");
                 loadDashboardData();
@@ -353,7 +352,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Action Triggers called from HTML click handlers
     window.triggerDonate = async function(itemId) {
         try {
-            const response = await fetch(`http://127.0.0.1:8000/api/groceries/${itemId}/status`, {
+            const response = await fetch(`https://waste-predictor-and-donation-recommender.onrender.com/api/groceries/${itemId}/status`, {
                 method: "PATCH",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ status: "donated" })
@@ -392,7 +391,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Show loading toast
         showToast("Generating recipe options...", "success");
         try {
-            const response = await fetch(`http://127.0.0.1:8000/api/recipes/recommend?user_id=${userId}`);
+            const response = await fetch(`https://waste-predictor-and-donation-recommender.onrender.com/api/recipes/recommend?user_id=${userId}`);
             if (!response.ok) throw new Error();
             const data = await response.json();
             
@@ -423,7 +422,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Update statistics dashboard counts dynamically
     async function updateStatistics() {
         try {
-            const response = await fetch(`http://127.0.0.1:8000/api/groceries/stats?user_id=${userId}`);
+            const response = await fetch(`https://waste-predictor-and-donation-recommender.onrender.com/api/groceries/stats?user_id=${userId}`);
             if (!response.ok) throw new Error("Stats lookup failed");
             
             const stats = await response.json();
