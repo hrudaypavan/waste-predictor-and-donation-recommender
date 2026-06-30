@@ -503,6 +503,23 @@ input.form-control:focus {
     background-color: var(--danger-hover);
 }
 
+.btn-undo {
+    background-color: #e65100;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-family: var(--font-primary);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--transition-speed);
+}
+
+.btn-undo:hover {
+    background-color: #bf360c;
+}
+
+
 .btn-ghost {
     background: none;
     border: 1px solid var(--border-color);

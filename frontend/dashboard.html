@@ -280,6 +280,23 @@
     </div>
   </div>
 
+  <!-- Undo Donate Confirmation Modal -->
+  <div class="modal" id="undoModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3><i class="fas fa-undo-alt"></i> Undo Donation</h3>
+        <button class="modal-close" onclick="closeModal('undoModal')">&times;</button>
+      </div>
+      <p style="margin: 12px 0 20px; font-size: 0.95rem; color: var(--text-secondary);">Move this item back to your inventory? It will reappear in your active grocery list.</p>
+      <input type="hidden" id="undoItemId" />
+      <div class="modal-buttons">
+        <button type="button" class="btn-ghost" onclick="closeModal('undoModal')">Cancel</button>
+        <button type="button" class="btn-undo" id="confirmUndoBtn"><i class="fas fa-undo-alt"></i> Move to Inventory</button>
+      </div>
+    </div>
+  </div>
+
+
   <!-- 3. Recipe Suggestions Modal -->
   <div class="modal" id="recipeModal">
     <div class="modal-content" style="max-width: 550px;">

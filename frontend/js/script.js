@@ -369,29 +369,35 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    // Undo Donate — move item back to inventory
-    window.triggerUndoDonate = async function(itemId) {
-        const item = inventory.find(i => i.id === itemId);
-        const itemName = item ? item.item_name : "Item";
-        
-        if (!confirm(`Move "${itemName}" back to your inventory?`)) return;
-        
-        try {
-            const response = await fetch(`https://waste-predictor-and-donation-recommender.onrender.com/api/groceries/${itemId}/status`, {
-                method: "PATCH",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ status: "remaining" })
-            });
-            if (!response.ok) throw new Error("Undo donate failed");
-            
-            const restored = await response.json();
-            showToast(`"${restored.item_name}" has been moved back to your inventory!`, "success");
-            loadDashboardData();
-        } catch (err) {
-            console.error(err);
-            showToast("Failed to undo donation", "danger");
-        }
+    // Undo Donate — open confirmation modal
+    window.triggerUndoDonate = function(itemId) {
+        document.getElementById("undoItemId").value = itemId;
+        openModal("undoModal");
     };
+
+    // Undo Donate — confirm button handler
+    const confirmUndoBtn = document.getElementById("confirmUndoBtn");
+    if (confirmUndoBtn) {
+        confirmUndoBtn.addEventListener("click", async () => {
+            const itemId = document.getElementById("undoItemId").value;
+            try {
+                const response = await fetch(`https://waste-predictor-and-donation-recommender.onrender.com/api/groceries/${itemId}/status`, {
+                    method: "PATCH",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ status: "remaining" })
+                });
+                if (!response.ok) throw new Error("Undo donate failed");
+                
+                const restored = await response.json();
+                showToast(`"${restored.item_name}" has been moved back to your inventory!`, "success");
+                closeModal("undoModal");
+                loadDashboardData();
+            } catch (err) {
+                console.error(err);
+                showToast("Failed to undo donation", "danger");
+            }
+        });
+    }
 
     window.triggerEdit = function(itemId) {
         const item = inventory.find(i => i.id === itemId);
