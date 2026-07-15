@@ -19,6 +19,7 @@ class GroceryItem(Base):
     id = Column(Integer, primary_key=True, index=True)
     user_id = Column(Integer, ForeignKey("users.id", ondelete="CASCADE"), nullable=False)
     item_name = Column(String, nullable=False)
+    category = Column(String, default="General")
     quantity = Column(Float, nullable=False)  # Float to allow fractional kg/liters
     purchase_date = Column(Date, nullable=False)
     expiration_date = Column(Date, nullable=False)

@@ -36,6 +36,7 @@ def add_grocery_item(db: Session, item_data: dict, user_id: int, predicted_waste
     new_item = GroceryItem(
         user_id=user_id,
         item_name=item_data["item_name"],
+        category=item_data.get("category", "General"),
         quantity=item_data["quantity"],
         purchase_date=date.fromisoformat(item_data["purchase_date"]),
         expiration_date=date.fromisoformat(item_data["expiration_date"]),
@@ -60,6 +61,7 @@ def update_grocery_item(db: Session, item_id: int, item_data: dict, predicted_wa
         return None
     
     db_item.item_name = item_data["item_name"]
+    db_item.category = item_data.get("category", "General")
     db_item.quantity = item_data["quantity"]
     db_item.purchase_date = date.fromisoformat(item_data["purchase_date"])
     db_item.expiration_date = date.fromisoformat(item_data["expiration_date"])

@@ -1,6 +1,7 @@
 from fastapi import FastAPI, Depends, Form, HTTPException, status
 from fastapi.middleware.cors import CORSMiddleware
 from sqlalchemy.orm import Session
+from sqlalchemy import text
 from pydantic import BaseModel
 from datetime import date, datetime
 import joblib
@@ -22,6 +23,14 @@ app.add_middleware(
 
 # Create database tables
 models.Base.metadata.create_all(bind=database.engine)
+
+@app.on_event("startup")
+def startup_event():
+    try:
+        with database.engine.begin() as conn:
+            conn.execute(text("ALTER TABLE groceries ADD COLUMN category VARCHAR DEFAULT 'General'"))
+    except Exception:
+        pass
 
 # Dependency: DB session
 def get_db():
