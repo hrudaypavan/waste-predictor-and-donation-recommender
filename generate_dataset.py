@@ -17,15 +17,15 @@ category_names = list(categories.keys())
 
 # Generate synthetic records
 np.random.seed(42)
-num_records = 500
+num_records = 2000
 
 data = []
 for i in range(num_records):
     category = np.random.choice(category_names)
     info = categories[category]
     
-    quantity = np.random.uniform(1.0, 10.0) # Quantity in kg/liters/units
-    days_to_expiry = np.random.randint(1, 30) # Days to expiry from purchase
+    quantity = np.random.uniform(0.5, 30.0) # Quantity in kg/liters/units
+    days_to_expiry = np.random.randint(1, 1000) # Days to expiry from purchase
     
     # Storage temperature might deviate slightly from recommended
     recommended_temp = info['temp']
