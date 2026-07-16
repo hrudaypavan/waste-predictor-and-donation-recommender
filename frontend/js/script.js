@@ -375,27 +375,46 @@ document.addEventListener('DOMContentLoaded', () => {
         openModal("undoModal");
     };
 
-    // Undo Donate — confirm button handler
+    // Undo Donate — confirm button handler with retry + loading state
     const confirmUndoBtn = document.getElementById("confirmUndoBtn");
     if (confirmUndoBtn) {
         confirmUndoBtn.addEventListener("click", async () => {
             const itemId = document.getElementById("undoItemId").value;
-            try {
-                const response = await fetch(`https://waste-predictor-and-donation-recommender.onrender.com/api/groceries/${itemId}/status`, {
-                    method: "PATCH",
-                    headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify({ status: "remaining" })
-                });
-                if (!response.ok) throw new Error("Undo donate failed");
-                
-                const restored = await response.json();
-                showToast(`"${restored.item_name}" has been moved back to your inventory!`, "success");
-                closeModal("undoModal");
-                loadDashboardData();
-            } catch (err) {
-                console.error(err);
-                showToast("Failed to undo donation", "danger");
-            }
+
+            // Show loading state
+            const originalText = confirmUndoBtn.innerHTML;
+            confirmUndoBtn.disabled = true;
+            confirmUndoBtn.innerHTML = `<i class="fas fa-spinner fa-spin"></i> Please wait...`;
+
+            const attemptUndo = async (attemptsLeft) => {
+                try {
+                    const response = await fetch(`https://waste-predictor-and-donation-recommender.onrender.com/api/groceries/${itemId}/status`, {
+                        method: "PATCH",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify({ status: "remaining" })
+                    });
+                    if (!response.ok) throw new Error("Undo donate failed");
+
+                    const restored = await response.json();
+                    showToast(`"${restored.item_name}" has been moved back to your inventory!`, "success");
+                    closeModal("undoModal");
+                    loadDashboardData();
+                } catch (err) {
+                    console.error(err);
+                    if (attemptsLeft > 0) {
+                        // Server might be waking up — wait 4 seconds then retry
+                        confirmUndoBtn.innerHTML = `<i class="fas fa-spinner fa-spin"></i> Server waking up, retrying...`;
+                        setTimeout(() => attemptUndo(attemptsLeft - 1), 4000);
+                    } else {
+                        // All retries exhausted
+                        confirmUndoBtn.disabled = false;
+                        confirmUndoBtn.innerHTML = originalText;
+                        showToast("Server is slow to respond. Please try again in a moment.", "danger");
+                    }
+                }
+            };
+
+            attemptUndo(2); // Try up to 3 times total (1 + 2 retries)
         });
     }
 
